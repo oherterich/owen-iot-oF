@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1C728146-1837-4EC4-9AB0-86CE375C57D1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>twitterParticles</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>50551CF8-4837-488C-BE16-1D91CCC79276</key>
+		<string>https://github.com/jefftimesten/ofxJSON.git</string>
+		<key>5BB9D7FC-AB0D-4657-8894-920D9FFD1204</key>
+		<string>https://github.com/oherterich/owen-iot-oF.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>apps/owen-iot-oF/twitterParticles/twitterParticles.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>14B76366-5D09-4FFC-9B8D-525ADC50886D</key>
+		<string>../../../../..</string>
+		<key>50551CF8-4837-488C-BE16-1D91CCC79276</key>
+		<string>../../../../../addons/ofxJSON</string>
+		<key>5BB9D7FC-AB0D-4657-8894-920D9FFD1204</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/oherterich/owen-iot-oF.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>14B76366-5D09-4FFC-9B8D-525ADC50886D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>14B76366-5D09-4FFC-9B8D-525ADC50886D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>of_v0.8</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>50551CF8-4837-488C-BE16-1D91CCC79276</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxJSON</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5BB9D7FC-AB0D-4657-8894-920D9FFD1204</string>
+			<key>IDESourceControlWCCName</key>
+			<string>owen-iot-oF</string>
+		</dict>
+	</array>
+</dict>
+</plist>
