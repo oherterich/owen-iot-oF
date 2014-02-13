@@ -13,7 +13,7 @@ Particle::Particle( ofTrueTypeFont *_font ) {
     vel.set(ofRandom(-5, 5), ofRandom(-5, 5));
     acc.set(0);
     
-    c.setHsb(ofRandom(0, 30), 180, ofRandom(220,240));
+    c.setHsb(35, 190, 190);
     
     size = ofRandom(12, 16);
     dampening = ofRandom(0.95, 0.97);
@@ -21,6 +21,10 @@ Particle::Particle( ofTrueTypeFont *_font ) {
     font = _font;
     
     text = "A";
+    
+    theta = ofRandom(-180, 180);
+    scale = 1;
+    trans = 255.0;
 }
 
 void Particle::addForce( ofVec2f frc ) {
@@ -65,15 +69,43 @@ void Particle::addDampeningForce() {
     vel *= dampening;
 }
 
+void Particle::correctRotation() {
+    if (theta <= 0 ) {
+        theta++ ;
+    }
+    else if (theta >= 0 ) {
+        theta-- ;
+    }
+}
+
+void Particle::setBoundaries() {
+    if (pos.x > ofGetWindowWidth() + 50) {
+        pos.set(-50, ofRandomHeight());
+    }
+    
+    if (pos.x < -50) {
+        pos.set(ofGetWindowWidth() + 50, ofRandomHeight());
+    }
+}
+
 void Particle::update() {
     vel += acc;
     pos += vel;
+    
+    correctRotation();
+    
+    float h = sin(ofGetElapsedTimef() * 0.02) * 100 + 100;
+    c.setHsb(h, 210, 255);
     
     acc.set(0);
 }
 
 void Particle::draw() {
-    ofSetColor(c);
-    //ofCircle(pos, size);
-    font->drawString(text, pos.x, pos.y);
+    ofSetColor(c, trans);
+    ofPushMatrix();{
+        ofTranslate(pos);
+        ofRotate(theta);
+        ofScale(scale, scale);
+        font->drawString(text, 0, 0);
+    }ofPopMatrix();
 }

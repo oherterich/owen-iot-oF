@@ -17,13 +17,18 @@ public:
     void draw();
     void addForce( ofVec2f frc );
     void addAttractionForce( float radius, float strength );
-    void addRepulsionForce( float px, float py, float radius, float strength );
+    void addRepulsionForce( float px, float py,float radius, float strength );
     void addDampeningForce();
+    void correctRotation();
+    void setBoundaries();
     
     ofVec2f pos, vel, acc;
     ofColor c;
     float size;
     float dampening;
+    float theta;
+    float scale;
+    float trans;
     
     ofVec2f loc;
     

@@ -52,7 +52,7 @@ public:
     // This method is just an example of whatyour calls might look like.
     std::string exampleMethod(string search, int num)
     {
-        return get("/1.1/search/tweets.json?q=" + search + "&count=" + ofToString(num) + "&result_type=popular");
+        return get("/1.1/search/tweets.json?q=" + search + "&count=" + ofToString(num) + "&result_type=mixed");
     }
     
     // This method is an example of posting an status to twitter.

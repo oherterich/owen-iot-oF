@@ -26,9 +26,11 @@ class testApp : public ofBaseApp{
     void parseData();
     
     vector<Particle> particleList;
+    vector<Particle> randomParticles;
     
     ofVec2f particleLocation;
     ofVec2f particleStart;
+    float pushForce;
     
     ofTrueTypeFont font;
     
@@ -39,5 +41,7 @@ class testApp : public ofBaseApp{
     vector<string> twitterText;
     int numOfTweets;
     int activeTweet;
+    
+    ofColor bkgrnd;
 		
 };
