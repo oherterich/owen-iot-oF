@@ -24,6 +24,7 @@ class testApp : public ofBaseApp{
     
     void addParticle( int num );
     void parseData();
+    void newTweet();
     
     vector<Particle> particleList;
     vector<Particle> randomParticles;
@@ -31,6 +32,9 @@ class testApp : public ofBaseApp{
     ofVec2f particleLocation;
     ofVec2f particleStart;
     float pushForce;
+    
+    float newTweetTime;
+    float timeSinceTweet;
     
     ofTrueTypeFont font;
     
@@ -43,5 +47,5 @@ class testApp : public ofBaseApp{
     int activeTweet;
     
     ofColor bkgrnd;
-		
+        
 };
