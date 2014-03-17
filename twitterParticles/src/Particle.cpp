@@ -94,8 +94,8 @@ void Particle::update() {
     
     correctRotation();
     
-    float h = sin(ofGetElapsedTimef() * 0.02) * 100 + 100;
-    c.setHsb(h, 210, 255);
+    float h = sin(ofGetElapsedTimef() * 0.03) * 50 + 100;
+    c.setHsb(h, 200, 255);
     
     acc.set(0);
 }

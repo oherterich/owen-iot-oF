@@ -24,6 +24,7 @@ class testApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
     void addParticle( int num );
+    void checkForSpaces();
     void parseData();
     void newTweet();
     void moveWind();

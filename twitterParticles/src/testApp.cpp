@@ -72,6 +72,8 @@ void testApp::setup(){
         randomParticles.push_back( p );
     }
     
+    checkForSpaces();
+    
     serialPort.enumerateDevices();
     serialPort.setup(0, 9600);
     
@@ -90,8 +92,8 @@ void testApp::update(){
         if (windSpeed < 0) {
             windSpeed = 0;
         }
-        else if (windSpeed > 30) {
-            windSpeed = 30;
+        else if (windSpeed > 5.0) {
+            windSpeed = 5.0;
         }
         if (abs(windSpeed - prevWindSpeed) > 5.0) {
             windSpeed = 0.0;
@@ -100,16 +102,13 @@ void testApp::update(){
         float forceY = ofNoise(wind.pos.y * 0.01, ofGetElapsedTimef() * 0.1) * PI * 2;
         
         wind.addForce( ofVec2f( ofNoise( wind.pos.x ) * windSpeed / 2, sin( forceY ) * windSpeed ) );
-        
-//        cout << ofNoise( wind.pos.x ) * windSpeed / 2 << " | " << sin( forceY ) * windSpeed / 2 << endl;
-        
-        
     }
     
-    float newWindSpeed = ofMap(windSpeed, 0, 10, 0.0, 2.0);
+    float newWindSpeed = ofMap(windSpeed, 0, 5.0, 0.0, 1.5);
+    float windSize = ofMap( windSpeed, 0, 5.0, 50, 250 );
 
     
-    if ( newWindSpeed > 3.0 && timeSinceTweet > 3.0 ) {
+    if ( newWindSpeed > 5.0 && timeSinceTweet > 3.0 ) {
         cout << "huh" << endl;
         newTweet();
     }
@@ -123,7 +122,7 @@ void testApp::update(){
     for (int i = 0; i < particleList.size(); i++) {
         particleList[i].addAttractionForce(1500, 0.3);
         particleList[i].addRepulsionForce(mouseX, mouseY, 50.0, 5.0);
-        particleList[i].addRepulsionForce( wind.pos.x, wind.pos.y, 250, newWindSpeed);
+        particleList[i].addRepulsionForce( wind.pos.x, wind.pos.y, windSize, newWindSpeed);
         particleList[i].addDampeningForce();
         particleList[i].update();
     }
@@ -198,8 +197,6 @@ void testApp::newTweet() {
         activeTweet = 0;
     }
     
-    particleLocation = particleStart;
-    
     //If we have a new tweet, make the particles go crazy.
     for (int i = 0; i < particleList.size(); i++) {
         particleList[i].addForce( ofVec2f(ofRandom(-pushForce, pushForce), ofRandom(-pushForce, pushForce) ) );
@@ -212,36 +209,11 @@ void testApp::newTweet() {
             particleList[i].text = " ";
         }
         
-        //            particleLocation.x += 30.0;
-        //
-        //            if (particleLocation.x >= ofGetWindowWidth() - 100) {
-        //                particleLocation.y += 45.0;
-        //                particleLocation.x = particleStart.x;
-        //            }
+
+
     }
     
-    for (int i = 0; i < particleList.size() - 1; i++) {
-        
-        int count = 1;
-        
-        if (particleList[i].text == " ") {
-            
-            while ( particleList[i+count].text != " " && (i + count) < particleList.size() - 1) {
-                count++;
-                cout << i << " : " << count << "   " << particleList[i+count].text << endl;
-            }
-            
-            float letterWidth = count * (30);
-            float restofLine = ofGetWindowWidth() - 100 - particleList[i].pos.x;
-            
-            if ( letterWidth > restofLine ) {
-                cout << i << " : line break! " << count << endl;
-            }
-            else {
-                cout << i << " : it's fine! " << count <<  endl;
-            }
-        }
-    }
+    checkForSpaces();
     
     for (int i = 0; i < randomParticles.size(); i++) {
         randomParticles[i].vel.set(ofRandom(-5.0, 5.0), 0);
@@ -249,6 +221,50 @@ void testApp::newTweet() {
     }
     
     newTweetTime = ofGetElapsedTimef();
+}
+
+void testApp::checkForSpaces() {
+    //Reset our particleLocation, which sets the attractor location for the letters
+    particleLocation = particleStart;
+    
+    //Loop through all of the letters
+    for (int i = 0; i < particleList.size() - 1; i++) {
+        
+        //Move the letter over
+        particleLocation.x += 30.0;
+        
+        //Set the "count" to 1 - count being how many letters before the next space
+        int count = 1;
+        
+        //If our letter is a space...
+        if (particleList[i].text == " ") {
+            
+            //...loop until we find the next letter
+            while ( particleList[i+count].text != " " && (i + count) < particleList.size() - 1) {
+                count++;
+            }
+            
+            //Find the length of the word and the length of the space left in the line.
+            float letterWidth = (count-1) * (30);
+            float restofLine = ofGetWindowWidth() - 100 - particleLocation.x;
+            
+            //If the word takes up more space than the line, move to the next line.
+            if ( letterWidth > restofLine ) {
+                particleLocation.y += 45.0;
+                particleLocation.x = particleStart.x;
+            }
+        }
+        
+        //Even if our letter isn't a space, we might want to move it to the next line
+        if (particleLocation.x >= ofGetWindowWidth() - 100) {
+            particleLocation.y += 45.0;
+            particleLocation.x = particleStart.x;
+        }
+        
+        //Set each letter's attractor to the correct location
+        particleList[i].loc = particleLocation;
+        
+    }
 }
 
 //--------------------------------------------------------------
