@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxJSONElement.h"
 #include "Particle.h"
+#include "Wind.h"
 #include "ofxExampleTwitterClient.h"
 
 class testApp : public ofBaseApp{
@@ -25,6 +26,7 @@ class testApp : public ofBaseApp{
     void addParticle( int num );
     void parseData();
     void newTweet();
+    void moveWind();
     
     vector<Particle> particleList;
     vector<Particle> randomParticles;
@@ -47,5 +49,10 @@ class testApp : public ofBaseApp{
     int activeTweet;
     
     ofColor bkgrnd;
-        
+    
+    ofSerial serialPort;
+    float windSpeed;
+    float prevWindSpeed;
+    
+    Wind wind;
 };

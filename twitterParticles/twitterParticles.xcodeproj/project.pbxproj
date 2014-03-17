@@ -23,6 +23,7 @@
 		89056EDB18BAB18900DCE770 /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89056ECC18BAB18900DCE770 /* OscPrintReceivedElements.cpp */; };
 		89056EDC18BAB18900DCE770 /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89056ECE18BAB18900DCE770 /* OscReceivedElements.cpp */; };
 		89056EDD18BAB18900DCE770 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89056ED018BAB18900DCE770 /* OscTypes.cpp */; };
+		893F289F18D7541900199522 /* Wind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 893F289D18D7541900199522 /* Wind.cpp */; };
 		8978F38B18ABEAA300748807 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8978F38918ABEAA300748807 /* Particle.cpp */; };
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
 		9B06C5CAE570B630A97E51C3 /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58F8CBF3C566F6908846E5FB /* json_writer.cpp */; };
@@ -137,6 +138,8 @@
 		89056ECF18BAB18900DCE770 /* OscReceivedElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OscReceivedElements.h; sourceTree = "<group>"; };
 		89056ED018BAB18900DCE770 /* OscTypes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OscTypes.cpp; sourceTree = "<group>"; };
 		89056ED118BAB18900DCE770 /* OscTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OscTypes.h; sourceTree = "<group>"; };
+		893F289D18D7541900199522 /* Wind.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Wind.cpp; sourceTree = "<group>"; };
+		893F289E18D7541900199522 /* Wind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wind.h; sourceTree = "<group>"; };
 		8978F38918ABEAA300748807 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Particle.cpp; sourceTree = "<group>"; };
 		8978F38A18ABEAA300748807 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Particle.h; sourceTree = "<group>"; };
 		8978F39518AC09B200748807 /* ofxExampleTwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxExampleTwitterClient.h; sourceTree = "<group>"; };
@@ -551,6 +554,8 @@
 				E4B69E1F0A3A1BDC003C02F2 /* testApp.h */,
 				8978F38918ABEAA300748807 /* Particle.cpp */,
 				8978F38A18ABEAA300748807 /* Particle.h */,
+				893F289D18D7541900199522 /* Wind.cpp */,
+				893F289E18D7541900199522 /* Wind.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -678,6 +683,7 @@
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,
 				89056ED518BAB18900DCE770 /* ofxOscReceiver.cpp in Sources */,
 				BEDFEE7400C58EA4E412B757 /* ofxJSONElement.cpp in Sources */,
+				893F289F18D7541900199522 /* Wind.cpp in Sources */,
 				7CED9FCC5BF62C4915C8D09F /* json_reader.cpp in Sources */,
 				AE32F1807796B1050E082651 /* json_value.cpp in Sources */,
 				9B06C5CAE570B630A97E51C3 /* json_writer.cpp in Sources */,

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4382C345-380A-4C80-A159-8E08F0E0649D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>serialTest</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>265017F9-2B20-4C7E-8D23-325BE2367823</key>
+		<string>https://github.com/oherterich/owen-iot-oF.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>apps/owen-iot-oF/serialTest/serialTest.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>265017F9-2B20-4C7E-8D23-325BE2367823</key>
+		<string>../../..</string>
+		<key>DCF9EBDD-BFA6-479B-81B0-873210E92E87</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/oherterich/owen-iot-oF.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DCF9EBDD-BFA6-479B-81B0-873210E92E87</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DCF9EBDD-BFA6-479B-81B0-873210E92E87</string>
+			<key>IDESourceControlWCCName</key>
+			<string>of_v0.8</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>265017F9-2B20-4C7E-8D23-325BE2367823</string>
+			<key>IDESourceControlWCCName</key>
+			<string>owen-iot-oF</string>
+		</dict>
+	</array>
+</dict>
+</plist>
