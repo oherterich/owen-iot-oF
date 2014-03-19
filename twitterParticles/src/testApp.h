@@ -54,6 +54,7 @@ class testApp : public ofBaseApp{
     ofSerial serialPort;
     float windSpeed;
     float prevWindSpeed;
+    float maxWind;
     
     Wind wind;
 };

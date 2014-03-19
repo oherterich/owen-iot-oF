@@ -21,7 +21,7 @@ void testApp::setup(){
     if(client.isAuthorized())
     {
         // Get tweets.
-        std::string s = client.exampleMethod("#technology", numOfTweets);
+        std::string s = client.exampleMethod("#yolo", numOfTweets);
         
         bool parsingSuccessful = json.parse(s);
         if (parsingSuccessful) {
@@ -74,6 +74,8 @@ void testApp::setup(){
     
     checkForSpaces();
     
+    maxWind = 25.0;
+    
     serialPort.enumerateDevices();
     serialPort.setup(0, 9600);
     
@@ -92,8 +94,8 @@ void testApp::update(){
         if (windSpeed < 0) {
             windSpeed = 0;
         }
-        else if (windSpeed > 5.0) {
-            windSpeed = 5.0;
+        else if (windSpeed > maxWind) {
+            windSpeed = maxWind;
         }
         if (abs(windSpeed - prevWindSpeed) > 5.0) {
             windSpeed = 0.0;
@@ -104,11 +106,11 @@ void testApp::update(){
         wind.addForce( ofVec2f( ofNoise( wind.pos.x ) * windSpeed / 2, sin( forceY ) * windSpeed ) );
     }
     
-    float newWindSpeed = ofMap(windSpeed, 0, 5.0, 0.0, 1.5);
-    float windSize = ofMap( windSpeed, 0, 5.0, 50, 250 );
+    float newWindSpeed = ofMap(windSpeed, 0, maxWind, 0.0, 1.5);
+    float windSize = ofMap( windSpeed, 0, maxWind, 50, 250 );
 
     
-    if ( newWindSpeed > 5.0 && timeSinceTweet > 3.0 ) {
+    if ( windSpeed > (maxWind - maxWind * 0.1) && timeSinceTweet > 5.0 ) {
         cout << "huh" << endl;
         newTweet();
     }
@@ -155,7 +157,7 @@ void testApp::draw(){
     ofSetColor(255);
     ofDrawBitmapString("Move mouse to push letters. Click to get new tweet.", ofPoint(20, 20));
     
-    ofDrawBitmapString( ofToString(ofMap(windSpeed, 0, 30, 0, 20.0)), 50, 50);
+    ofDrawBitmapString( ofToString(windSpeed), 50, 50);
     ofDrawBitmapString( ofToString( timeSinceTweet ), 50, 70);
     ofDrawBitmapString( ofToString( wind.pos.x ) + " " + ofToString( wind.pos.y ), 50, 90);
     
